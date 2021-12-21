@@ -63,8 +63,7 @@ public class Book {
     public String getLanguage() { return this.language; }
     public Integer getNumberOfPages() { return this.numberOfPages; }
     
-    
-    // getters.
+    // setters.
     public void setId( Long id ) { this.id = id; }
     public void setTitle( String title ) { this.title = title; }
     public void setDescription( String description ) { this.description = description; }

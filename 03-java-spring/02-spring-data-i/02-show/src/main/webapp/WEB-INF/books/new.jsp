@@ -30,9 +30,9 @@
     </p>
     <p>
         <form:label path="numberOfPages">Pages</form:label>
-        <form:errors path="numberOfPages"/>     
+        <form:errors path="numberOfPages"/>
         <form:input type="number" path="numberOfPages"/>
-    </p>    
+    </p>
     <input type="submit" value="Submit"/>
 </form:form>
 

@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import com.rankcaleb.mvc.models.Book;
 import com.rankcaleb.mvc.repositories.BookRepository;
+
 @Service
 public class BookService {
     // adding the book repository as a dependency

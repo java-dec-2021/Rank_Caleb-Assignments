@@ -24,9 +24,9 @@ public class LanguagesController {
 	
 	// Routing.
 	@RequestMapping( value="/languages", method=RequestMethod.GET )
-	public String dashboard( Model model ) {
+	public String dashboard( Model model, @ModelAttribute("language") Language language ) {
 		List<Language> ls = languageService.allLanguages();
-		model.addAttribute( "languages", ls);
+		model.addAttribute( "languages", ls );
 		return "index.jsp";
 	}
 	@RequestMapping( value="/languages", method=RequestMethod.POST )

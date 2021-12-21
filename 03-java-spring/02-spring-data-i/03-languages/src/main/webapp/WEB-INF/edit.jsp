@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -7,6 +8,9 @@
 	<meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <title>${language.name}</title>
 </head>
 <body style="padding: 20px 20%;">
@@ -20,7 +24,8 @@
 </div>
 
 <div class="container">
-    <form:form action="" method="post">
+    <form:form action="/languages/${language.id}" method="post">
+        <input type="hidden" name="_method" value="put">
         <div class="row">
             <label for="name" class="col label-control">Name:</label>
             <form:errors path="name"/>

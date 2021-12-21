@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isErrorPage="true" %>
 
@@ -25,15 +26,15 @@
     <tbody>
         <c:forEach var="language" items="${languages}">
             <tr>
-                <td><a href="/languages/${language.id}"><c:out value="%{ language.name }"/></a></td>
-                <td><c:out value="%{ language.creator }"/></td>
-                <td><c:out value="%{ language.currentVersion }"/></td>
+                <td><a href="/languages/${language.id}"><c:out value="${ language.name }"/></a></td>
+                <td><c:out value="${language.creator}"/></td>
+                <td><c:out value="${language.currentVersion}"/></td>
                 <td class="row">
                     <form action="/languages/${language.id}" method="post" class="col">
                         <input type="hidden" name="_method" value="delete">
                         <input type="submit" value="Delete">
                     </form>
-                    <a href="/languages/edit/${language.id}" class="col">Edit Book</a>
+                    <a href="/languages/${language.id}/edit" class="col">Edit</a>
                 </td>
             </tr>
         </c:forEach>

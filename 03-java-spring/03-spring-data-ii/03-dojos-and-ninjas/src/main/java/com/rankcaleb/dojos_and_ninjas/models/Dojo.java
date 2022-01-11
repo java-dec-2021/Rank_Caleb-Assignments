@@ -17,7 +17,6 @@ import javax.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
-//...
 @Entity
 @Table(name="dojos")
 public class Dojo {

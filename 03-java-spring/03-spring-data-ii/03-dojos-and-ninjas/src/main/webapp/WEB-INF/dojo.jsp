@@ -18,7 +18,7 @@
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body style="padding: 10px 20%;">
+<body style="padding: 30px 20%;">
 <div class="container">
 
 <h1><c:out value="${ dojo.name }"/> Location Ninjas</h1>

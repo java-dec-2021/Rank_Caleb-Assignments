@@ -21,6 +21,9 @@ public class DojosController {
 	}
 	
 	// Routing
+	@RequestMapping( value="/", method=RequestMethod.GET )
+	public String index() { return "redirect:/dojos/new"; }
+	
 	@RequestMapping( value="/dojos/new", method=RequestMethod.GET )
 	public String dojos( Model model, @ModelAttribute("dojo") Dojo dojo ) {
 		List<Dojo> ds = dojoService.allDojos();

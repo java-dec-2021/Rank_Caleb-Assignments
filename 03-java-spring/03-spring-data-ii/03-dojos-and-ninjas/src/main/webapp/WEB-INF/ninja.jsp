@@ -18,7 +18,7 @@
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body style="padding: 10px 20%;">
+<body style="padding: 30px 20%;">
 <div class="container row">
 
 <div class="col">
@@ -27,7 +27,11 @@
         <div class="row">
             <label for="dojo" class="col label-control">Dojo:</label>
             <form:errors path="dojo"/>
-            <input type="text" name="dojo" class="col form-control">
+            <select name="dojo" class="col form-select">
+                <c:forEach var="dojo" items="${dojos}">
+                    <option value="${ dojo.id }"><c:out value="${ dojo.name }"/></option>
+                </c:forEach>
+            </select>
         </div>
         <div class="row">
             <label for="firstName" class="col label-control">First Name:</label>

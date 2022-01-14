@@ -14,8 +14,8 @@ public interface CategoryRepository extends CrudRepository<Category, Long> {
 	Optional<Category> findById( Long id );
 	void deleteById( Long id );
 	
-	// Retrieves a list of all products for a particular category
-//    List<Product> findAllByCategories( Category product );
-    // Retrieves a list of any products a particular category does not belong to.
-//    List<Product> findByCategoriesNotContains( Category product );
+    // Retrieves a list of all categories for a particular product
+    List<Category> findAllByProducts(Product product);
+    // Retrieves a list of any categories a particular product does not belong to.
+    List<Category> findByProductsNotContains(Product product);
 }

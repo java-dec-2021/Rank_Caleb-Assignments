@@ -8,18 +8,21 @@ import org.springframework.stereotype.Service;
 
 import com.rankcaleb.products_and_catagories.models.Category;
 import com.rankcaleb.products_and_catagories.models.Product;
+import com.rankcaleb.products_and_catagories.repositories.CategoryRepository;
 import com.rankcaleb.products_and_catagories.repositories.ProductRepository;
 
 @Service
 public class ProductService {
 	
-private final ProductRepository productRepo;
+	private final ProductRepository productRepo;
+	private final CategoryRepository categoryRepo;
 	
-	public ProductService( ProductRepository productRepo ) { this.productRepo = productRepo; }
+	public ProductService( ProductRepository productRepo, CategoryRepository categoryRepo )
+	{ this.productRepo = productRepo; this.categoryRepo = categoryRepo; }
 	
 	public List<Product> allProducts() { return productRepo.findAll(); }
-//	public List<Category> allCategories( Product p ) { return productRepo.findAllByProducts( p ); }
-//	public List<Category> allNonCategories( Product p ) { return productRepo.findByProductsNotContains( p ); }
+	public List<Category> allCategories( Product p ) { return categoryRepo.findAllByProducts( p ); }
+	public List<Category> allNonCategories( Product p ) { return categoryRepo.findByProductsNotContains( p ); }
 	
 	public Product createProduct( Product p ) { return productRepo.save( p ); }
 	public Product findProduct( Long id ) {

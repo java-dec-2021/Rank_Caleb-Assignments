@@ -50,7 +50,7 @@
     </div>
     <div class="col" style="margin-left: 5%;">
         <h2 class="row">Add your answer:</h2>
-
+        
         <form:form action="/questions/${question.id}" method="post" modelAttribute="answer">
             <div class="row">
                 <label for="answer" class="col-3 label-control">Answer:</label>

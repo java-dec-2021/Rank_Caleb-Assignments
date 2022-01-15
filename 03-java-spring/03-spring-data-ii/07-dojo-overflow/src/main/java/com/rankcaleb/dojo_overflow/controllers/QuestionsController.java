@@ -58,10 +58,14 @@ public class QuestionsController {
 			}
 		}
 		
-		for( Tag t : tl ) {
-			Tag testTag = tagService.findTag( t.getSubject() );
-			if( testTag != null) { t = testTag;	}
-			else { t = tagService.createTag( t ); }
+		for( int i=0; i<tl.size(); i++ ) {
+			Tag testTag = tagService.findTag( tl.get(i).getSubject() );
+			
+			if( testTag != null ) {
+				tl.set(i, testTag );
+			}
+			
+			else { tl.set(i, tagService.createTag( tl.get(i) ) ); }
 		}
 		
 		q.setTags( tl );
